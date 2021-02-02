@@ -1,0 +1,261 @@
+<div class="col-sm-4">
+
+  <div class="panel panel-default">
+
+    <div class="panel-heading "><p class="panel-title">Busque su vuelo </div>
+
+    <div class="panel-body box-blue">
+
+      <form class="col-sm-12" name="flights" onSubmit="flightsForm()" method="post" autocomplete="off">
+        <!-- "Ida", "ida y vuelta" options -->
+        <fieldset class="form-group" id="radiobuttos">
+          <div class="form-check col-md-6">
+          <label class="form-check-label">
+              <input type="radio" class="form-check-input radio-option" name="optionsRadios" id="idayvuelta" value="option1" checked>
+              Ida y Vuelta
+            </label>
+          </div>
+          <div class="form-check col-md-6">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input radio-option" name="optionsRadios" id="ida" value="option2">
+              Ida
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Desde form -->
+        <div class="form-group row">
+          <label for="origen-text-input" class="col-xs-3 control-label">Desde:</label>
+          <div class="col-xs-9">
+            <input type="text" class="form-control place-input" placeholder="Ciudad o Aeropuerto" id="origen-text-input">
+          </div>
+          <!--Error messages-->
+          <div class="alert alert-danger collapse" id="wrong-origen"></div>
+        </div>
+
+        <!-- Hasta form -->
+        <div class="form-group row">
+          <label for="destino-text-input" class="col-xs-3 control-label">Hasta:</label>
+          <div class="col-xs-9">
+            <input type="text" class="form-control place-input" placeholder="Ciudad o Aeropuerto" id="destino-text-input">
+          </div>
+          <!--Error messages-->
+          <div class="alert alert-danger collapse" id="wrong-destino"></div>
+        </div>
+
+        <div class="form-group row">
+          <label for="date-salida" class="col-xs-5 control-label">Partida:</label>
+          <div class="input-group col-xs-7">
+            <input type="text" class="form-control datepicker" id="date-salida">
+            <span class="input-group-addon">
+              <span class=" glyphicon glyphicon-calendar"> </span>
+            </span>
+          </div>
+          <!--Error messages-->
+          <div class="alert alert-danger collapse" id="wrong-date-salida"></div>
+        </div>
+
+        <div class="form-group row">
+          <label for="date-regreso" class="col-xs-5 control-label">Regreso:</label>
+          <div class="input-group col-xs-7">
+            <input type="text" class="datepicker form-control" id="date-regreso">
+            <span class="input-group-addon">
+              <span class=" glyphicon glyphicon-calendar"> </span>
+            </span>
+          </div>
+          <!--Error messages-->
+          <div class="alert alert-danger collapse" id="wrong-date-regreso"></div>
+        </div>
+
+        <div class="form-group row">
+          <label for="adultos" class="col-xs-3 control-label">Adultos:</label>
+          <div class="col-xs-5">
+            <select class="form-control" id="adultos">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="ninios" class="col-xs-3 control-label">Niños:</label>
+          <div class="col-xs-5">
+            <select class="form-control" id="ninios">
+              <option>0</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="infantes" class="col-xs-3 control-label">Infantes:</label>
+          <div class="col-xs-5">
+            <select class="form-control" id="infantes">
+              <option>0</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </div>
+        </div>
+
+        <a data-toggle="collapse" href="#advanced-search" aria-controls="advanced-search">
+          Búsqueda Avanzada
+          <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+        </a>
+
+        <div class="collapse" id="advanced-search">
+
+          <div class="form-group row">
+            <p>
+            <label for="advanced-flight-class" class="col-xs-3 control-label">Clase:</label>
+            <div class="col-xs-9">
+              <select class="form-control" id="advanced-flight-class">
+                <option>Economica</option>
+                <option>Ejecutiva</option>
+                <option>Primera Clase</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="advanced-airline" class="col-xs-3 control-label">Aerolínea:</label>
+            <div class="col-xs-9">
+              <select class="form-control" id="advanced-airline">
+                <option>Todas</option>
+                <option>Aerolineas Argentinas</option>
+                <option>Aeromexico</option>
+                <option>Alitalia</option>
+                <option>Air France</option>
+                <option>American Airlines</option>
+                <option>Avianca</option>
+                <option>British Airways</option>
+                <option>Copa</option>
+                <option>Lan</option>
+                <option>Iberia</option>
+                <option>Taca</option>
+                <option>TAM</option>
+                <option>SOL</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-right">
+          <button type="submit" class="btn btn-lg btn-primary">
+            Buscar
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- This div contains other data -->
+<div class="col-xs-8">
+
+  <div class="form-group box-blue left-border row" hidden id="flights-sort-box">
+    <label class="col-xs-4">Ordenar por:</label>
+
+    <div class="col-xs-8">
+
+      <div class="row">
+
+        <div class="form-check col-xs-4 sort-flights" id="ascendant-flights-price-sort-div" hidden>
+          <label class="form-check-label center">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="ascendant-flights-price-sort" >
+            Precio
+            <span class="glyphicon glyphicon-sort-by-attributes" aria-hidden="true"></span>
+          </label>
+        </div>
+
+        <div class="form-check col-xs-4 sort-flights" id="ascendant-flights-duration-sort-div" hidden>
+          <label class="form-check-label center">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="ascendant-flights-duration-sort"  >
+            Duración
+            <span class="glyphicon glyphicon-sort-by-attributes" aria-hidden="true"></span>
+          </label>
+        </div>
+
+        <div class="form-check col-xs-4 sort-flights" id="ascendant-flights-airline-sort-div" hidden>
+          <label class="form-check-label center">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="ascendant-flights-airline-sort"  >
+            Aerolínea
+            <span class="glyphicon glyphicon-sort-by-attributes" aria-hidden="true"></span>
+          </label>
+        </div>
+
+        <div class="form-check col-xs-4 sort-flights" id="descendant-flights-price-sort-div" hidden>
+          <label class="form-check-label center">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="descendant-flights-price-sort"  >
+            Precio
+            <span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span>
+          </label>
+        </div>
+
+        <div class="form-check col-xs-4 sort-flights" id="descendant-flights-duration-sort-div" hidden>
+          <label class="form-check-label center">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="descendant-flights-duration-sort"  >
+            Duración
+            <span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span>
+          </label>
+        </div>
+
+         <div class="form-check col-xs-4 sort-flights" id="descendant-flights-airline-sort-div" hidden>
+          <label class="form-check-label center">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="descendant-flights-airline-sort"  >
+            Aerolínea
+            <span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span>
+          </label>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="modifiable-panel">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Ofertas</div>
+      <div class="alert alert-danger collapse" id="unknown-error"></div>
+      <div class="panel-body" id="offers">
+        <noscript>
+          <div class="alert alert-danger">JavaScript no está habilitado. Actualice su navegador.</div>
+        </noscript>
+      </div>
+    </div>
+
+  </div>
+
+</div>

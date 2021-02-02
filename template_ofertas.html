@@ -1,0 +1,42 @@
+<div class="col-sm-3">
+  <div class="panel panel-default">
+    <div class="panel-heading "><p class="panel-title">Busque ofertas</p></div>
+    <div class="panel-body box-blue">
+
+      <form class="col-sm-12" name="offer" onSubmit="offerForm()">
+
+        <!-- Desde form -->
+        <div class="form-group row">
+          <label for="origen-text-input" class="col-xs-6 control-label">Ciudad origen:</label>
+          <div class="row">
+            <div class="col-xs-12">
+             <input type="text" class="form-control place-input" placeholder="Ciudad o Aeropuerto" id="origen-text-input">
+            </div>
+          </div>
+          <!--Error messages-->
+          <div class="alert alert-danger collapse" id="wrong-origen"></div>
+        </div>
+
+        <div class="form-check verticaly-spaced">
+          <div class="text-right">
+            <button type="submit" class="btn btn-lg btn-primary" >
+              Buscar
+              <span aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-9" id="modifiable-panel">
+
+  <div class="panel panel-default">
+    <div class="panel-heading">Resultados de ofertas</div>
+    <div class="alert alert-danger collapse" id="unknown-error"></div>
+    <div class="panel-body" id="offers_2"></div>
+  </div>
+
+</div>

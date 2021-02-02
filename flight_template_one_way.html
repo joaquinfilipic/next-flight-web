@@ -1,0 +1,47 @@
+<!-- IDA -->
+<div class="box-default" id="flight-{{Number}}">
+  <div class="row">
+    <p class="col-xs-4"><strong> IDA <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></strong></p>
+    <p class="col-xs-5"><strong> Aerolínea:</strong> {{Aerolinea}}</p>
+  </div>
+  <div class="row">
+    <div class="col-xs-9">
+      <p><strong>Origen:</strong> {{LugarOrigen}}</p>
+      <p><strong>Destino:</strong> {{LugarDestino}}</p>
+      <p><strong><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Hora de partida:</strong> {{HoraPartida}} hs.</p>
+      <p><strong><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Hora de llegada:</strong> {{HoraLlegada}} hs.</p>
+    </div>
+    <div class="col-xs-3">
+      <p><strong>Cargos:</strong> ${{Cargos}}</p>
+      <p><strong>Tarifa:</strong> ${{Precio}}</p>
+      <p><strong>Impuestos:</strong> ${{Impuestos}}</p>
+      <p class="message-md"><strong>Total:</strong> ${{Total}}</p>
+    </div>
+  </div>
+  <div class="row">
+	  <a class="col-xs-7 flight-detail-class" data-toggle="collapse" aria-expanded="false" aria-controls="flight-detail-id-{{Number}}">
+      Detalle <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="row" id="flight-detail-id-{{Number}}">
+    <div class="collapse flight-detail-block-class">
+      <p></p>
+	  	<p class="col-xs-9"><strong> Número de vuelo:</strong> {{Numero}}</p>
+      <p class="col-xs-3"><strong> Precio p/adulto:</strong> ${{PAdulto}}</p>
+      <p class="col-xs-9"><strong> Duración:</strong> {{Duracion}} hs.</p>
+      <p class="col-xs-3"><strong> Precio p/niño:</strong> ${{PNiño}}</p>
+      <p class="col-xs-9"><strong> Clase:</strong> {{Clase}}</p>
+      <p class="col-xs-3"><strong> Precio p/infante:</strong> ${{PInfante}}</p>
+	  </div>
+	</div>
+
+  <div class="row">
+    <p></p>
+    <div class="col-xs-9"></div>
+    <div class="col-xs-3">
+      <button type="button" class="btn btn-md btn-primary" onclick="comprarButton({{Number}})">Comprar<span aria-hidden="true"></span></button>
+      <button type="button" class="btn btn-md btn-primary" onclick="puntuarButton({{Number}},'idayvuelta')">Puntuar<span aria-hidden="true"></span></button>
+    </div>
+  </div>
+
+</div>

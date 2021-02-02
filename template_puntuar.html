@@ -1,0 +1,296 @@
+<div class="row">
+  <div class="col-xs-2"></div>
+  <div class="col-xs-8">
+    <div class="panel panel-default" id="review-info-vuelo-panel" hidden>
+      <div class="panel-heading box-blue">Información del vuelo</div>
+      <div class="panel-body">
+        <div class="row">
+
+          <p class="title-field col-xs-2">Vuelo n°:</p>
+          <p class="data-field col-xs-2" id="review-flight-number-information">{{Numero}}</p>
+          <p class="title-field col-xs-2">Aerolínea:</p>
+          <p class="data-field col-xs-2" id="review-airline-information">{{Aerolinea}}</p>
+          <p class="title-field col-xs-2">Precio adulto:</p>
+          <p class="data-field col-xs-2" id="review-adult-price-information">${{PrecioAdulto}}</p>
+
+        </div>
+
+        <div class="row">
+
+          <p class="title-field col-xs-2">Origen:</p>
+          <p class="data-field col-xs-2" id="review-origin-information">{{Origen}}</p>
+          <p class="title-field col-xs-2">Destino:</p>
+          <p class="data-field col-xs-2" id="review-destiny-information">{{Destino}}</p>
+          <p class="title-field col-xs-2">Clase:</p>
+          <p class="data-field col-xs-2" id="review-class-information">{{Clase}}</p>
+
+        </div>
+
+        <div class="row">
+
+          <p class="title-field col-xs-2">Día salida:</p>
+          <p class="data-field col-xs-2" id="review-departure-day-information">{{DiaSalida}}</p>
+          <p class="title-field col-xs-2">Día llegada:</p>
+          <p class="data-field col-xs-2" id="review-arrival-day-information">{{DiaLlegada}}</p>
+
+        </div>
+
+        <div class="row">
+
+          <p class="title-field col-xs-2">Hora salida:</p>
+          <p class="data-field col-xs-2" id="review-departure-hour-information">{{HoraSalida}}</p>
+          <p class="title-field col-xs-2">Hora llegada:</p>
+          <p class="data-field col-xs-2" id="review-arrival-hour-information">{{HoraLlegada}}</p>
+          <p class="title-field col-xs-2">Duración:</p>
+          <p class="data-field col-xs-2" id="review-duration-information">{{Duracion}}</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-2"></div>
+  <div class="col-xs-8">
+    <div class="panel panel-default collapse" id="review-info-vuelo-panel-mini" hidden>
+      <div class="panel-heading box-blue">Información del vuelo</div>
+      <div class="panel-body">
+        <div class="row">
+
+          <p class="title-field col-xs-3">Vuelo n°:</p>
+          <p class="data-field col-xs-3" id="review-flight-number-information-2">{{Numero}}</p>
+          <p class="title-field col-xs-3">Aerolínea:</p>
+          <p class="data-field col-xs-3" id="review-airline-information-2">{{Aerolinea}}</p>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-2"></div>
+</div>
+
+<div class="row back-image">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Puntúe su vuelo
+      </div>
+      <div class="panel-body">
+        <div class="alert alert-danger collapse" id="unknown-error-search"></div>
+
+        <form class="col-sm-12"  name="submitReview" onSubmit="submitReviewForm()">
+
+          <div class="form-group row" hidden>
+            <label for="review-airline-text-input" class="col-xs-3 control-label">
+              Nombre de aerolínea:
+            </label>
+            <div class="col-xs-4">
+              <input type="text" class="form-control" id="review-airline-text-input">
+            </div>
+            <!--Error messages-->
+            <div class="alert alert-danger collapse" id="wrong-airline"></div>
+          </div>
+
+          <div class="form-group row" hidden>
+            <label for="review-flight-number-text-input" class="col-xs-3 control-label">
+              Número de vuelo:
+            </label>
+            <div class="col-xs-4">
+              <input type="text" class="form-control" id="review-flight-number-text-input">
+            </div>
+            <!--Error messages-->
+            <div class="alert alert-danger collapse" id="wrong-flight-number"></div>
+          </div>
+
+          <div class="form-group row">
+            <label for="review-friendliness" class="col-xs-3 control-label">
+              Amabilidad:
+            </label>
+            <div class="col-xs-2">
+              <select class="form-control mark" id="review-friendliness">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </div>
+            <label for="review-punctuality" class="col-xs-3 control-label">
+              Puntualidad:
+            </label>
+            <div class="col-xs-2">
+              <select class="form-control mark" id="review-punctuality">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="review-food" class="col-xs-3 control-label">
+              Comida:
+            </label>
+            <div class="col-xs-2">
+              <select class="form-control mark" id="review-food">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </div>
+            <label for="review-comfort" class="col-xs-3 control-label">
+              Confort:
+            </label>
+            <div class="col-xs-2">
+              <select class="form-control mark" id="review-comfort">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="review-mileage-program" class="col-xs-5 control-label">
+              Programa de viajeros frecuentes:
+            </label>
+            <div class="col-xs-2">
+              <select class="form-control mark" id="review-mileage-program">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="review-quality-price" class="col-xs-5 control-label">
+              Relación precio/calidad:
+            </label>
+            <div class="col-xs-2">
+              <select class="form-control mark" id="review-quality-price">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-xs-5">
+              ¿Lo recomendaría a otro?
+            </label>
+            <fieldset class="col-xs-7">
+              <div class="row">
+                <div class="form-check col-xs-2">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="review-recommend-yes" value="option1" checked>
+                    Sí
+                  </label>
+                </div>
+                <div class="form-check col-xs-2">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="review-recommend-no" value="option2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group row">
+            <label for="review-general-rating" class="col-xs-3 control-label">
+              Puntuación general:
+            </label>
+            <fieldset disabled="disabled">
+              <div class="col-xs-2">
+                <input type="text" class="form-control" id="review-general-rating">
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group row">
+            <label for="review-comment-text-input" class="col-xs-3 control-label">
+              Comentario:
+            </label>
+            <div class="col-xs-8">
+              <input type="text" class="form-control" id="review-comment-text-input" placeholder="Opcional">
+              <p class="form-text text-muted">
+                Menos de 256 caracteres.
+              </p>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-md-10"></div>
+            <div class="col-md-2">
+              <button type="submit" class="btn btn-lg btn-primary" >
+                Enviar
+              </button>
+            </div>
+          </div>
+
+          <div class="alert alert-info" role="alert">
+            <p class="message-md">
+              Consulte más opiniones de este vuelo haciendo click
+              <span>
+                <a href="javascript:opinionesButton()" class="alert-link">
+                  Aquí
+                </a>
+              </span>
+            </p>
+          </div>
+
+        </form>
+
+        <div class="alert alert-danger collapse" id="unknown-error"></div>
+        <div class="alert alert-success collapse" id="success-alert"></div>
+
+      </div>
+    </div>
+  </div>
+</div>

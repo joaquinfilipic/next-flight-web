@@ -1,0 +1,221 @@
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+
+  <form class="col-sm-12"  name="submitData" onSubmit="submitDataForm()">
+
+    <p class="label label-info title-large">Información de pasajeros</p>
+    <div class="panel panel-default">
+      <div class="panel-heading">Complete la siguiente información sobre cada pasajero</div>
+      <div class="panel-body" id="passengers-info">
+
+      </div>
+    </div>
+
+    <p class="label label-info title-large">Información de pago</p>
+    <div class="panel panel-default">
+
+      <div class="panel-heading">Datos de su tarjeta</div>
+      <div class="panel-body">
+
+        <div class="alert alert-danger collapse col-sm-12" id="wrong-card-data"></div>
+
+
+        <div class="col-sm-12">
+
+          <div class="form-group row">
+            <label for="card-owner-name-text-input" class="col-xs-3 control-label">Nombre del titular:</label>
+            <div class="col-xs-4">
+              <input type="text" class="form-control" id="card-owner-name-text-input" placeholder="Nombre/s">
+            </div>
+            <!--Error messages-->
+            <div class="alert alert-danger collapse" id="wrong-owner-name"></div>
+          </div>
+
+          <div class="form-group row">
+            <label for="card-owner-surname-text-input" class="col-xs-3 control-label">Apellido del titular:</label>
+            <div class="col-xs-4">
+              <input type="text" class="form-control" id="card-owner-surname-text-input" placeholder="Apellido/s">
+            </div>
+            <!--Error messages-->
+            <div class="alert alert-danger collapse" id="wrong-owner-surname"></div>
+          </div>
+
+          <div class="form-group row">
+            <label for="card-number-text-input" class="col-xs-3 control-label">Número de la tarjeta:</label>
+            <div class="col-xs-4">
+              <input type="text" class="form-control" id="card-number-text-input">
+            </div>
+            <!--Error messages-->
+            <div class="alert alert-danger collapse" id="wrong-card-number"></div>
+          </div>
+
+          <div class="form-group row">
+            <label for="card-expiration-text-input" class="col-xs-3 control-label">Fecha de vencimiento:</label>
+            <div class="col-xs-2">
+              <input type="text" class="form-control" id="card-expiration-text-input" placeholder="MMYY">
+            </div>
+            <!--Error messages-->
+            <div class="alert alert-danger collapse" id="wrong-card-exp-date"></div>
+          </div>
+
+          <div class="form-group row">
+            <label for="card-security-code-text-input" class="col-xs-3 control-label">Código de seguridad:</label>
+            <div class="col-xs-3">
+              <input type="text" class="form-control" id="card-security-code-text-input">
+            </div>
+            <!--Error messages-->
+            <div class="alert alert-danger collapse" id="wrong-card-code"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Dirección de facturación
+        <span class="center text-muted">
+            (* -> obligatorio)
+        </span>
+      </div>
+      <div class="panel-body">
+
+        <div class="col-sm-12">
+
+          <div class="form-group row">
+            <label for="country-option-input" class="col-xs-3 control-label">* País:</label>
+            <div class="col-xs-4">
+              <select class="form-control" id="country-option-input">
+
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="state-text-input" class="col-xs-3 control-label">* Estado o provincia:</label>
+            <div class="col-xs-4">
+              <input type="text" class="form-control" id="state-text-input">
+            </div>
+            <!--Error messages-->
+            <div class="alert alert-danger collapse" id="wrong-state"></div>
+          </div>
+
+          <div class="form-group row">
+            <label for="city-text-input" class="col-xs-3 control-label">* Ciudad:</label>
+            <div class="col-xs-4">
+              <input type="text" class="form-control" id="city-text-input">
+            </div>
+            <!--Error messages-->
+            <div class="alert alert-danger collapse" id="wrong-city"></div>
+          </div>
+
+          <div class="form-group row">
+            <label for="zip-code-text-input" class="col-xs-3 control-label">* Código postal:</label>
+            <div class="col-xs-3">
+              <input type="text" class="form-control" id="zip-code-text-input">
+            </div>
+            <!--Error messages-->
+            <div class="alert alert-danger collapse" id="wrong-zip-code"></div>
+          </div>
+
+          <div class="form-group row">
+            <label for="street-text-input" class="col-xs-3 control-label">* Calle:</label>
+            <div class="col-xs-4">
+              <input type="text" class="form-control" id="street-text-input">
+            </div>
+            <!--Error messages-->
+            <div class="alert alert-danger collapse" id="wrong-street"></div>
+          </div>
+
+          <div class="form-group row">
+            <label for="door-number-text-input" class="col-xs-3 control-label">* Número:</label>
+            <div class="col-xs-2">
+              <input type="text" class="form-control" id="door-number-text-input">
+            </div>
+            <!--Error messages-->
+            <div class="alert alert-danger collapse" id="wrong-door-number"></div>
+          </div>
+
+          <div class="form-group row">
+            <label for="floor-text-input" class="col-xs-3 control-label">Piso:</label>
+            <div class="col-xs-2">
+              <input type="text" class="form-control" id="floor-text-input">
+            </div>
+            <!--Error messages-->
+            <div class="alert alert-danger collapse" id="wrong-floor"></div>
+          </div>
+
+          <div class="form-group row">
+            <label for="apartment-text-input" class="col-xs-3 control-label">Departamento:</label>
+            <div class="col-xs-2">
+              <input type="text" class="form-control" id="apartment-text-input">
+            </div>
+            <!--Error messages-->
+            <div class="alert alert-danger collapse" id="wrong-apartment"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Datos de contacto</div>
+      <div class="panel-body">
+
+        <div class="col-sm-12">
+
+          <div class="form-group row">
+            <label for="contact-email-text-input" class="col-xs-3 control-label">Email:</label>
+            <div class="col-xs-4">
+              <input type="text" class="form-control" id="contact-email-text-input" placeholder="usuario@ejemplo.com">
+            </div>
+            <!--Error messages-->
+            <div class="alert alert-danger collapse" id="wrong-email"></div>
+          </div>
+
+          <div class="form-group row">
+            <label for="phone-number-0" class="col-xs-3 control-label">Teléfono:</label>
+            <div class="col-xs-4">
+              <input type="text" class="form-control" id="phone-number-0">
+            </div>
+            <!--Error messages-->
+            <div class="alert alert-danger collapse" id="wrong-phone"></div>
+          </div>
+
+          <a id="add-phone" data-value="1">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true" data-value="1"></span>
+            Agregar otro teléfono
+          </a>
+          <!--Warning messages-->
+          <div class="alert alert-warning collapse" id="warning-phones"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <p class="label label-info title-large">Confirmación:</p>
+    <div class="panel panel-default">
+
+      <div class="panel-heading">Revise los datos ingresados y confirme su compra</div>
+      <div class="panel-body">
+
+        <p class="text-right">
+          <button type="submit" class="btn btn-lg btn-primary">
+            Confirmar Compra
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+          </button>
+        </p>
+
+      </div>
+    </div>
+
+  </form>
+  </div>
+
+</div>

@@ -1,0 +1,46 @@
+<div class="passenger-template">
+  <p>{{PassengerType}}</p>
+  <div class="form-group row">
+    <label class="col-xs-3 control-label">Nombre:</label>
+    <div class="col-xs-4">
+      <input type="text" class="form-control passenger-name" placeholder="Nombre/s">
+    </div>
+    <!--Error messages-->
+    <div class="alert alert-danger collapse wrong-name-class"></div>
+  </div>
+  <div class="form-group row">
+    <label class="col-xs-3 control-label">Apellido:</label>
+    <div class="col-xs-4">
+      <input type="text" class="form-control passenger-surname" placeholder="Apellido/s">
+    </div>
+    <!--Error messages-->
+    <div class="alert alert-danger collapse wrong-surname-class"></div>
+  </div>
+  <div class="form-group row">
+    <label class="col-xs-3 control-label">Tipo de documento:</label>
+    <div class="col-xs-3">
+      <select class="form-control passenger-id-type">
+        <option>DNI</option>
+        <option>Pasaporte</option>
+      </select>
+    </div>
+    <!--Error messages-->
+    <div class="alert alert-danger collapse wrong-id-type-class"></div>
+  </div>
+  <div class="form-group row">
+    <label class="col-xs-3 control-label">Número de documento:</label>
+    <div class="col-xs-4">
+      <input type="text" class="form-control passenger-id-number">
+    </div>
+    <!--Error messages-->
+    <div class="alert alert-danger collapse wrong-id-number-class"></div>
+  </div>
+  <div class="form-group row">
+    <label class="col-xs-3 control-label">Fecha de nacimiento:</label>
+    <div class="col-xs-4">
+      <input type="text" class="form-control passenger-birth-date" placeholder="dd/mm/aaaa">
+    </div>
+    <!--Error messages-->
+    <div class="alert alert-danger collapse wrong-birth-date-class"></div>
+  </div>
+</div>

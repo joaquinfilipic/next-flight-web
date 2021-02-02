@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Next Flight!</title>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script src="moustache.min.js"></script>
+
+    <!-- jQueryUI -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- My stylesheet containing my classes -->
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- My search code -->
+    <script type="text/javascript" src="search.js"></script>
+    <script type="text/javascript" src="pag_opiniones.js"></script>
+    <script type="text/javascript" src="info_personal.js"></script>
+    <script type="text/javascript" src="detalle_compra.js"></script>
+    <script type="text/javascript" src="ofertas.js"></script>
+    <script type="text/javascript" src="pag_puntuar.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body class="back-image text-style">
+
+    <nav class="navbar navbar-default box-gray-and-blue">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"></a>
+			<a href="javascript:homeButton()"><img src="./images/logo.png" alt="Next Flight!" width="200" height="50"/></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="upper-nav-tab-button " role="presentation">
+              <a onclick="contactButton()">
+                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                Contacto
+              </a>
+            </li>
+            <li class="upper-nav-tab-button" role="presentation">
+              <a onclick="nosotrosButton()">
+                <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>
+                Nosotros
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="nav-tab-button box-elem-op" id="home-tab">
+        <a  href="javascript:homeButton()">
+          <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+          Home
+        </a>
+      </li>
+      <li role="presentation" class="nav-tab-button" id="ofertas-tab">
+        <a href="javascript:offerButton()">
+          <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>
+          Ofertas
+        </a>
+      </li>
+      <li role="presentation" class="nav-tab-button" id="opinion-tab">
+        <a href="javascript:opinionesButton()">
+          <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+          Opiniones
+        </a>
+      </li>
+    </ul>
+
+    <ol class="breadcrumb bc-back" id="breadcrumb-ol">
+      <li class="breadcrumb-item active" id="bc-home">Home</li>
+      <li class="breadcrumb-item " id="bc-results">Resultado de Búsqueda</li>
+      <li class="breadcrumb-item " id="bc-info">Información personal</li>
+      <li class="breadcrumb-item " id="bc-validation">Validación de compra</li>
+    </ol>
+
+    <!-- This div contains the form on the left, and some info on the right. -->
+    <div class="container-fluid" id="modifiable-great-panel">
+
+      <!-- This div contains the form -->
+      <div class="col-sm-4">
+
+        <div class="panel panel-default">
+
+          <div class="panel-heading "><p class="panel-title">Busque su vuelo </div>
+
+          <div class="panel-body box-blue">
+
+            <form class="col-sm-12" name="flights" onSubmit="flightsForm()" method="post" autocomplete="off">
+              <!-- "Ida", "ida y vuelta" options -->
+              <fieldset class="form-group" id="radiobuttos">
+                <div class="form-check col-md-6">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input radio-option" name="optionsRadios" id="idayvuelta" value="option1" checked>
+                    Ida y Vuelta
+                  </label>
+                </div>
+                <div class="form-check col-md-6">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input radio-option" name="optionsRadios" id="ida" value="option2">
+                    Ida
+                  </label>
+                </div>
+              </fieldset>
+
+              <!-- Desde form -->
+              <div class="form-group row">
+                <label for="origen-text-input" class="col-xs-3 control-label">Desde:</label>
+                <div class="col-xs-9">
+                  <input type="text" class="form-control place-input" placeholder="Ciudad o Aeropuerto" id="origen-text-input">
+                </div>
+                <!--Error messages-->
+                <div class="alert alert-danger collapse" id="wrong-origen"></div>
+              </div>
+
+              <!-- Hasta form -->
+              <div class="form-group row">
+                <label for="destino-text-input" class="col-xs-3 control-label">Hasta:</label>
+                <div class="col-xs-9">
+                  <input type="text" class="form-control place-input" placeholder="Ciudad o Aeropuerto" id="destino-text-input">
+                </div>
+                <!--Error messages-->
+                <div class="alert alert-danger collapse" id="wrong-destino"></div>
+              </div>
+
+              <div class="form-group row">
+                <label for="date-salida" class="col-xs-5 control-label">Partida:</label>
+                <div class="input-group col-xs-7">
+                  <input type="text" class="form-control datepicker" id="date-salida">
+                  <span class="input-group-addon">
+                    <span class=" glyphicon glyphicon-calendar"> </span>
+                  </span>
+                </div>
+                <!--Error messages-->
+                <div class="alert alert-danger collapse" id="wrong-date-salida"></div>
+              </div>
+
+              <div class="form-group row">
+                <label for="date-regreso" class="col-xs-5 control-label">Regreso:</label>
+                <div class="input-group col-xs-7">
+                  <input type="text" class="datepicker form-control" id="date-regreso">
+                  <span class="input-group-addon">
+                    <span class=" glyphicon glyphicon-calendar"> </span>
+                  </span>
+                </div>
+                <!--Error messages-->
+                <div class="alert alert-danger collapse" id="wrong-date-regreso"></div>
+              </div>
+
+              <div class="form-group row">
+                <label for="adultos" class="col-xs-3 control-label"><abbr title="Mayores de 11 años.">Adultos:</abbr></label>
+                <div class="col-xs-5">
+                  <select class="form-control" id="adultos">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="ninios" class="col-xs-3 control-label"><abbr title="De 2 a 11 años.">Niños:</abbr></label>
+                <div class="col-xs-5">
+                  <select class="form-control" id="ninios">
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="infantes" class="col-xs-3 control-label"><abbr title="Menores de 2 años.">Infantes:</abbr></label>
+                <div class="col-xs-5">
+                  <select class="form-control" id="infantes">
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </div>
+              </div>
+
+              <a data-toggle="collapse" href="#advanced-search" aria-controls="advanced-search">
+                Búsqueda Avanzada
+                <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+              </a>
+
+              <div class="collapse" id="advanced-search">
+
+                <div class="form-group row">
+                  <p>
+                  <label for="advanced-flight-class" class="col-xs-3 control-label">Clase:</label>
+                  <div class="col-xs-9">
+                    <select class="form-control" id="advanced-flight-class">
+                      <option>Economica</option>
+                      <option>Ejecutiva</option>
+                      <option>Primera Clase</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="advanced-airline" class="col-xs-3 control-label">Aerolínea:</label>
+                  <div class="col-xs-9">
+                    <select class="form-control" id="advanced-airline">
+                      <option>Todas</option>
+                      <option>Aerolineas Argentinas</option>
+                      <option>Aeromexico</option>
+                      <option>Alitalia</option>
+                      <option>Air France</option>
+                      <option>American Airlines</option>
+                      <option>Avianca</option>
+                      <option>British Airways</option>
+                      <option>Copa</option>
+                      <option>Lan</option>
+                      <option>Iberia</option>
+                      <option>Taca</option>
+                      <option>TAM</option>
+                      <option>SOL</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-right">
+                <button type="submit" class="btn btn-lg btn-primary">
+                  Buscar
+                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                </button>
+
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- This div contains other data -->
+      <div class="col-xs-8">
+
+        <div class="form-group box-blue left-border row" hidden id="flights-sort-box">
+          <label class="col-xs-4">Ordenar por:</label>
+
+          <div class="col-xs-8">
+
+            <div class="row">
+
+              <div class="form-check col-xs-4 sort-flights" id="ascendant-flights-price-sort-div" hidden>
+                <label class="form-check-label center">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="ascendant-flights-price-sort" >
+                  Precio
+                  <span class="glyphicon glyphicon-sort-by-attributes" aria-hidden="true"></span>
+                </label>
+              </div>
+
+              <div class="form-check col-xs-4 sort-flights" id="ascendant-flights-duration-sort-div" hidden>
+                <label class="form-check-label center">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="ascendant-flights-duration-sort"  >
+                  Duración
+                  <span class="glyphicon glyphicon-sort-by-attributes" aria-hidden="true"></span>
+                </label>
+              </div>
+
+              <div class="form-check col-xs-4 sort-flights" id="ascendant-flights-airline-sort-div" hidden>
+                <label class="form-check-label center">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="ascendant-flights-airline-sort"  >
+                  Aerolínea
+                  <span class="glyphicon glyphicon-sort-by-attributes" aria-hidden="true"></span>
+                </label>
+              </div>
+
+              <div class="form-check col-xs-4 sort-flights" id="descendant-flights-price-sort-div" hidden>
+                <label class="form-check-label center">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="descendant-flights-price-sort"  >
+                  Precio
+                  <span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span>
+                </label>
+              </div>
+
+              <div class="form-check col-xs-4 sort-flights" id="descendant-flights-duration-sort-div" hidden>
+                <label class="form-check-label center">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="descendant-flights-duration-sort"  >
+                  Duración
+                  <span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span>
+                </label>
+              </div>
+
+               <div class="form-check col-xs-4 sort-flights" id="descendant-flights-airline-sort-div" hidden>
+                <label class="form-check-label center">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="descendant-flights-airline-sort"  >
+                  Aerolínea
+                  <span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span>
+                </label>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div id="modifiable-panel">
+
+          <div class="panel panel-default">
+            <div class="panel-heading">Ofertas</div>
+            <div class="alert alert-danger collapse" id="unknown-error"></div>
+            <div class="panel-body" id="offers">
+              <noscript>
+                <div class="alert alert-danger">JavaScript no está habilitado. Actualice su navegador.</div>
+              </noscript>
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </body>
+
+</html>

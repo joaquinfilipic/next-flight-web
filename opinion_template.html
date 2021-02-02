@@ -1,0 +1,35 @@
+<div class="box-default">
+  <div class="row">
+    <div class="col-xs-12">
+      <p><strong>Aerolínea:</strong> {{NombreAerolinea}}</p>
+      <p><strong>Número de vuelo:</strong> {{NumeroVuelo}}</p>
+      <p><strong>Puntuación General:</strong> {{PuntuacionGeneral}}</p>
+
+      <a class="review-detail-class" data-toggle="collapse" aria-expanded="false" aria-controls="opinion-{{Number}}">
+        Detalle <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+      </a>
+      <div class="collapse review-detail-block-class" id="opinion-{{Number}}">
+
+        <p><strong>Amabilidad:</strong> {{Amabilidad}}</p>
+        <p><strong>Puntualidad:</strong> {{Puntualidad}}</p>
+        <p><strong>Comida:</strong> {{Comida}}</p>
+        <p><strong>Comfort:</strong> {{Comfort}}</p>
+        <p><strong>Programa de viajeros frecuentes:</strong> {{ViajerosFrecuentes}}</p>
+        <p><strong>Relación precio/calidad:</strong> {{PrecioCalidad}}</p>
+        <p><strong>¿Lo recomendaria?:</strong> {{Recomendaria}}</p>
+        <div class="panel panel-default">
+          <div class="panel-heading "><p class="panel-title">Comentarios:</p></div>
+          <div class="panel-body box-blue scrollable">
+            <p>{{Comentario}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-right">
+        <button type="button" class="btn btn-lg btn-primary review-button-class" onclick="puntuarPageButton({{Number}})">
+          Puntuar este vuelo
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

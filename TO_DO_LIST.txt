@@ -1,0 +1,34 @@
+TO DO LIST:
+4766841256789012
+REQUERIMIENTOS OBLIGATORIOS FUNCIONALES:
+
+	- Mostrar en el "Detalle" de cada vuelo, en la página de búsqueda de vuelos, la información faltante. Faltantes:
+		* Número.
+		* Duración.
+		* Precio por adulto.
+		* Precio por niño. (de haberlos)
+		* Precio por infante. (de haberlos)
+
+	- Ordenar por:
+		* Precio.
+		* Nombre de aerolínea.
+		* Duración.
+
+	- Validar tarjeta de crédito utilizando la API.
+
+	- Corregir validación de teléfonos y agregar opción para mostrar menos teléfonos.
+
+	- Mostrar el resúmen de compra ANTES de realizar la misma.
+
+REQUERIMIENTOS OBLIGATORIOS NO FUNCIONALES:
+
+	- Que funcione en por lo menos 2 de los siguientes navegadores;:
+		* IE 10 (o superior)
+		* Firefox 36 (o superior)
+		* Chrome 42 (o superior)
+
+	- Validar correctamente las etiquetas de HTML con el validador del W3C.
+
+	CAMBIAR TODAS LAS IDS DE LOS TEMPLATES PARA QUE TENGAN NUMEROS!!!!!!!! (CREO QUE YA ESTÁ, CHEQUEAR!)
+
+	- Validar correctamente el estilo CSS con el validador del W3C.

@@ -1,0 +1,97 @@
+<!-- IDA Y VUELTA -->
+<div class="box-default" id="flight-{{Number}}">
+
+  <div class="row">
+    <p class="col-xs-4"><strong> IDA <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></strong></p>
+    <p class="col-xs-5"><strong> Aerolínea:</strong> {{Aerolinea}}</p>
+  </div>
+  <div class="row">
+    <div class="col-xs-9">
+      <p><strong>Origen:</strong> {{LugarOrigen}}</p>
+      <p><strong>Destino:</strong> {{LugarDestino}}</p>
+      <p><strong><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Hora de partida:</strong> {{HoraPartida}} hs.</p>
+      <p><strong><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Hora de llegada:</strong> {{HoraLlegada}} hs.</p>
+    </div>
+    <div class="col-xs-3">
+      <p><strong>Cargos:</strong> ${{Cargos}}</p>
+      <p><strong>Tarifa:</strong> ${{Precio}}</p>
+      <p><strong>Impuestos:</strong> ${{Impuestos}}</p>
+      <p><strong>Precio parcial:</strong> ${{Total}}</p>
+    </div>
+  </div>
+  <!--<div class="row">
+    <a class="col-xs-7" href="#">Detalle<span class="glyphicon glyphicon-menu-down" aria-hidden="true" id="opinion-detail"></span></a>
+  </div>-->
+  <div class="row">
+	  <a class="col-xs-7 flight2i-detail-class" data-toggle="collapse" aria-expanded="false" aria-controls="flight2i-detail-block-class-{{Number}}">
+        Detalle <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+      </a>
+  </div>
+  <div class="row" id = "flight2i-detail-block-class-{{Number}}">
+    <div class="collapse flight2i-detail-block-class">
+      <p></p>
+      <p class="col-xs-9"><strong> Número de vuelo:</strong> {{Numero}}</p>
+      <p class="col-xs-3"><strong> Precio p/adulto:</strong> ${{PAdulto}}</p>
+      <p class="col-xs-9"><strong> Duración:</strong> {{Duracion}} hs.</p>
+      <p class="col-xs-3"><strong> Precio p/niño:</strong> ${{PNiño}}</p>
+      <p class="col-xs-9"><strong> Clase:</strong> {{Clase}}</p>
+      <p class="col-xs-3"><strong> Precio p/infante:</strong> ${{PInfante}}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-9"></div>
+    <div class="col-xs-3">
+      <button type="button" class="btn btn-md btn-primary" onclick="puntuarButton({{Number}},'idayvuelta-ida')">Puntuar<span aria-hidden="true"></span></button>
+    </div>
+  </div>
+
+  <p></p>
+  <div class="row">
+    <p class="col-xs-4"><strong> VUELTA <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></strong></p>
+    <p class="col-xs-5"><strong> Aerolínea:</strong> {{Aerolinea2}}</p>
+  </div>
+  <div class="row">
+    <div class="col-xs-9">
+      <p><strong>Origen:</strong> {{LugarOrigen2}}</p>
+      <p><strong>Destino:</strong> {{LugarDestino2}}</p>
+      <p><strong><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Hora de partida:</strong> {{HoraPartida2}} hs.</p>
+      <p><strong><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Hora de llegada:</strong> {{HoraLlegada2}} hs.</p>
+    </div>
+    <div class="col-xs-3">
+      <p><strong>Cargos:</strong> ${{Cargos2}}</p>
+      <p><strong>Tarifa:</strong> ${{Precio2}}</p>
+      <p><strong>Impuestos:</strong> ${{Impuestos2}}</p>
+      <div><strong>Precio parcial:</strong> ${{Total2}}</div>
+    </div>
+  </div>
+  <!--<div class="row">
+    <a class="col-xs-7" href="#">Detalle<span class="glyphicon glyphicon-menu-down" aria-hidden="true" id="opinion-detail"></span></a>
+  </div>-->
+  <div class="row">
+	  <a class="col-xs-7 flight2v-detail-class" data-toggle="collapse" aria-expanded="false" aria-controls="flight2v-detail-block-class-{{Number}}">
+        Detalle <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+      </a>
+  </div>
+  <div class="row" id = "flight2v-detail-block-class-{{Number}}">
+    <div class="collapse flight2v-detail-block-class">
+      <p></p>
+      <p class="col-xs-9"><strong> Número de vuelo:</strong> {{Numero2}}</p>
+      <p class="col-xs-3"><strong> Precio p/adulto:</strong> ${{PAdulto2}}</p>
+      <p class="col-xs-9"><strong> Duración:</strong> {{Duracion2}} hs.</p>
+      <p class="col-xs-3"><strong> Precio p/niño:</strong> ${{PNiño2}}</p>
+      <p class="col-xs-9"><strong> Clase:</strong> {{Clase2}}</p>
+      <p class="col-xs-3"><strong> Precio p/infante:</strong> ${{PInfante2}}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-9"></div>
+    <div class="col-xs-3 message-md"><strong>Total:</strong>${{SuperTotal}}</div>
+    <div class="col-xs-9"></div>
+    <div class="col-xs-3">
+      <button type="button" class="btn btn-md btn-primary" onclick="puntuarButton({{Number}},'idayvuelta-vuelta')">Puntuar<span aria-hidden="true"></span></button>
+      <button type="button" class="btn btn-md btn-primary" onclick="comprarButton({{Number}})">Comprar<span aria-hidden="true"></span></button>
+    </div>
+  </div>
+</div>

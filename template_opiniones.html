@@ -1,0 +1,110 @@
+<div class="container-fluid">
+
+  <div class="col-sm-4">
+
+    <div class="panel panel-default">
+
+      <div class="panel-heading "><p class="panel-title">Busque opiniones de vuelos</p></div>
+
+      <div class="panel-body box-blue">
+
+        <form class="col-sm-12" name="submitOpinion" onSubmit="submitOpinionForm()">
+
+          <div class="form-check verticaly-spaced">
+            <label for="airline-radio" class="form-check-label">
+              <input class="form-check-input radio-option" type="radio" checked="checked" name="exampleRadios" id="airline-radio">
+                Nombre de aerolínea:
+            </label>
+            <input type="text" class="form-control" id="airline-text-input">
+            <!--Error messages-->
+            <div class="alert alert-danger collapse" id="wrong-airline"></div>
+          </div>
+
+          <div class="form-check verticaly-spaced">
+            <label for="flight-number-radio" class="form-check-label">
+              <input class="form-check-input radio-option" type="radio" name="exampleRadios" id="flight-number-radio">
+                Número de vuelo:
+            </label>
+            <input type="text" class="form-control" disabled="disabled" id="flight-number-text-input">
+            <!--Error messages-->
+            <div class="alert alert-danger collapse" id="wrong-flight-number"></div>
+          </div>
+
+          <div class="form-check verticaly-spaced">
+            <div class="text-right">
+              <button type="submit" class="btn btn-lg btn-primary" >
+                Buscar
+                <span aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="col-xs-8" id = "left-opinion-box">
+
+    <div class="form-group box-blue left-border row" id="opinion-sort-box" hidden>
+      <label class="col-xs-4">Ordenar por:</label>
+
+      <div class="col-xs-8">
+
+        <div class="row">
+
+          <div class="form-check col-xs-6 sort" id="ascendant-flight-number-sort-div" hidden>
+            <label class="form-check-label center">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="ascendant-flight-number-sort" >
+              Número de vuelo
+              <span class="glyphicon glyphicon-sort-by-attributes" aria-hidden="true"></span>
+            </label>
+          </div>
+
+          <div class="form-check col-xs-6 sort" id="ascendant-rating-sort-div" hidden>
+            <label class="form-check-label center">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="ascendant-rating-sort" >
+              Puntuación genereal
+              <span class="glyphicon glyphicon-sort-by-attributes" aria-hidden="true"></span>
+            </label>
+          </div>
+
+          <div class="form-check col-xs-6 sort" id="descendant-flight-number-sort-div" hidden>
+            <label class="form-check-label center">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="descendant-flight-number-sort" >
+              Número de vuelo
+              <span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span>
+            </label>
+          </div>
+
+          <div class="form-check col-xs-6 sort" id="descendant-rating-sort-div" hidden>
+            <label class="form-check-label center">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="descendant-rating-sort" >
+              Puntuación genereal
+              <span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span>
+            </label>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel panel-default" hidden id="opinion-list-box">
+      <div class="panel-heading"><p class="panel-title">Lista de opiniones</p></div>
+      <div class="panel-body">
+
+        <div class="alert alert-danger collapse" id="unknown-error"></div>
+        <form class="opinion-list-form" id="opinion-list">
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
